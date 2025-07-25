@@ -6,8 +6,30 @@ class Node:
         self.right = right
 
 def compare(tree, search_value):
-    # Write your solution here!
-    pass
+    current = tree 
+    min = 0
+    max = 0
+
+    while current.left:
+        current = current.left
+
+    min = current.value
+
+    current = tree
+
+    while current.right:
+        current = current.right
+
+    max = current.value
+
+    values = (min, max)
+
+    if search_value < values[0]:
+        return "smaller"
+    elif search_value > values[1]:
+        return "bigger"
+    else:
+        return "spanned"
 
 
 r"""
